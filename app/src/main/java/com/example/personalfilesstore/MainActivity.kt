@@ -11,10 +11,13 @@ import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if(FirebaseAuth.getInstance().currentUser!!.uid.toString()!="")
+        {
+            startActivity(Intent(this,Home::class.java))
+        }
         val email:EditText=findViewById(R.id.EdtUSername)
         val password: EditText =findViewById(R.id.EdtPassword)
         val signup:TextView=findViewById(R.id.txtSignup)

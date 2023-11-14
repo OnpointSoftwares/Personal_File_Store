@@ -50,8 +50,16 @@ class AddNew : AppCompatActivity() {
         val camera_intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivityForResult(camera_intent, 123)
     }
+    private fun openDocuments()
+    {
+        val documentIntent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+        documentIntent.addCategory(Intent.CATEGORY_OPENABLE)
+        documentIntent.type = "*/*" // Set the MIME type of the documents you want to select, e.g., "application/pdf" for PDF files
+
+        startActivityForResult(documentIntent, 456)
+    }
     private fun selectImage() {
-        val choice = arrayOf<CharSequence>("Take Photo", "Choose from Gallery", "Cancel")
+        val choice = arrayOf<CharSequence>("Take Photo", "Choose from Gallery","Choose document", "Cancel")
         val myAlertDialog: AlertDialog.Builder = AlertDialog.Builder(this)
         myAlertDialog.setTitle("Select Image")
         myAlertDialog.setItems(choice, DialogInterface.OnClickListener { dialog, item ->
@@ -64,6 +72,9 @@ class AddNew : AppCompatActivity() {
                 // Select "Take Photo" to take a photo
                 choice[item] == "Take Photo" -> {
                     openCamera()
+                }
+                choice[item] == "Choose document" -> {
+                    openDocuments()
                 }
                 // Select "Cancel" to cancel the task
                 choice[item] == "Cancel" -> {
@@ -81,6 +92,13 @@ class AddNew : AppCompatActivity() {
             // BitMap is data structure of image file which store the image in memory
             // Set the image in imageview for display
             uploadImage(photo)
+        }
+        else if(requestCode===456)
+        {
+            // Handle document selection result
+            data?.data?.let { documentUri ->
+                uploadImage(documentUri)
+            }
         }
         else if(requestCode===100) {
             val imageSelected = data?.data

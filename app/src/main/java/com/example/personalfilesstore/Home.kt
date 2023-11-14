@@ -28,7 +28,7 @@ class Home : AppCompatActivity() {
         FirebaseDatabase.getInstance().reference.child("Files").child(FirebaseAuth.getInstance().currentUser!!.uid.toString()).addValueEventListener(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 for(snap in snapshot.children) {
-                    val name = snap.child("Name").value.toString()
+                    val name = snap.child("name").value.toString()
                     val url = snap.child("url").value.toString()
                     val file = FileModel(name, url)
                     list.add(file)
