@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "555409444571",
+    "project_id": "missingbooknotificationsystem",
+    "storage_bucket": "missingbooknotificationsystem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555409444571:android:8ce7155bb47b3df29046fe",
+        "android_client_info": {
+          "package_name": "com.example.personalfilesstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555409444571-72kpa1cvrbrakl0qp9kk930dkv0s1m3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7SkseaHxFWUaX_qTnwCENC6brp-9sXg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555409444571-72kpa1cvrbrakl0qp9kk930dkv0s1m3i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

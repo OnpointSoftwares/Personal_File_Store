@@ -41,6 +41,7 @@
         app:layout_constraintTop_toBottomOf="@id/logo"
         >
         <EditText
+            android:id="@+id/EdtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -60,6 +61,7 @@
         app:layout_constraintTop_toBottomOf="@id/layoutTxtName"
         >
         <EditText
+            android:id="@+id/EdtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -78,6 +80,7 @@
         app:layout_constraintTop_toBottomOf="@id/layoutTxtEmail"
         >
         <EditText
+            android:id="@+id/EdtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -96,6 +99,7 @@
         app:layout_constraintTop_toBottomOf="@id/layoutTxtPassword"
         >
         <EditText
+            android:id="@+id/EdtConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -103,7 +107,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnSignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register"
